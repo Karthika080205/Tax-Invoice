@@ -1,0 +1,72 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Free Invoice Generator</h1>
+        <form id="invoiceForm">
+            <div class="section">
+                <h2>Bill From</h2>
+                <input type="text" id="yourName" placeholder="Your Name">
+                <input type="text" id="yourAddress" placeholder="Your Address">
+                <input type="text" id="yourCity" placeholder="City">
+                <input type="text" id="yourState" placeholder="State">
+                <input type="text" id="yourZip" placeholder="Zip Code">
+            </div>
+            <div class="section">
+                <h2>Bill To</h2>
+                <input type="text" id="clientName" placeholder="Client Name">
+                <input type="text" id="clientAddress" placeholder="Client Address">
+                <input type="text" id="clientCity" placeholder="City">
+                <input type="text" id="clientState" placeholder="State">
+                <input type="text" id="clientZip" placeholder="Zip Code">
+            </div>
+            <div class="section">
+                <h2>Invoice Details</h2>
+                <input type="text" id="invoiceNumber" placeholder="Invoice Number">
+                <input type="date" id="invoiceDate" placeholder="Invoice Date">
+                <input type="date" id="dueDate" placeholder="Due Date">
+            </div>
+            <div class="section">
+                <h2>Items</h2>
+                <table id="itemsTable">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" class="itemDescription"></td>
+                            <td><input type="number" class="itemQuantity" value="1"></td>
+                            <td><input type="number" class="itemPrice" value="0.00"></td>
+                            <td class="itemTotal">0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" id="addItem">Add Item</button>
+            </div>
+            <div class="section">
+                <h2>Taxes</h2>
+                <input type="number" id="sgst" placeholder="SGST (%)">
+                <input type="number" id="cgst" placeholder="CGST (%)">
+                <input type="number" id="cess" placeholder="CESS (%)">
+            </div>
+            <div class="section">
+                <h2>Notes</h2>
+                <textarea id="notes" placeholder="Additional notes"></textarea>
+            </div>
+            <button type="button" id="generateInvoice">Generate Invoice</button>
+        </form>
+        <div id="invoiceOutput" class="invoice-output"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
